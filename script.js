@@ -3,6 +3,10 @@ const firstNum = 2;
 const operator = "add";
 const secondNum = 4;
 
+
+// const displayValue = document.querySelector(".display");
+// const btn = document.querySelectorAll("button");
+
 const add = (a, b) => {
     return a + b;
 };
@@ -34,3 +38,9 @@ const operate = (firstNum, operator, secondNum) => {
 }
 
 console.log(operate(firstNum, operator, secondNum));
+
+// Button listener to activate the clicked button
+// btn.addEventListener('click', () => {
+//     btn.classList.add("active");
+// })
+
