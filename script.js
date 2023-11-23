@@ -1,3 +1,8 @@
+//variables for calculator input
+// const firstNum
+// const operator
+// const secondNum
+
 const add = (a, b) => {
     return a + b;
 };
