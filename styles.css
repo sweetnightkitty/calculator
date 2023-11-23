@@ -15,7 +15,7 @@ body {
 }
 
 .calculator {
-    border: 1px solid black;
+    border: 5px solid #CE200F;
     display: flex;
     flex-direction: column;
     height: 500px;
@@ -45,8 +45,23 @@ body {
 
 .btn {
     flex: 1;
+    font-size: 20px;
 }
 
 .add {
     flex: 2;
+}
+
+.clear, .four, .zero, .eight, .two, .percent, .six, .equals, .multiply {
+    background-color: #CE200F;
+    color: white;
+}
+
+.seven, .one, .negative, .five, .decimal, .nine, .three, .subtract, .divide, .add {
+    background-color: white;
+    color: #CE200F;
+}
+
+.add {
+    border: 5px solid #CE200F;
 }
