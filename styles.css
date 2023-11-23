@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-div {
-    border: 1px solid red;
-}
-
 body {
     min-height: 100vh;
     display: flex;
@@ -15,11 +11,33 @@ body {
 }
 
 .calculator {
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
+    height: 500px;
+    width: 400px;
 }
 
 .display {
-    height: 10px;
+    height: 115px;
     width: 400px;
+}
+
+.btn-layout {
+    display: flex;
+    flex: 1;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.btn {
+    flex: 1;
+}
+
+.add {
+    flex: 2;
 }
