@@ -23,8 +23,13 @@ body {
 }
 
 .display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     height: 115px;
     width: 400px;
+    color: black;
+    font-size: 75px;
 }
 
 .btn-layout {
