@@ -11,6 +11,7 @@ const addBtn = document.querySelector(".add");
 const subtractBtn = document.querySelector(".subtract");
 const multiplyBtn = document.querySelector(".multiply");
 const divideBtn = document.querySelector(".divide");
+const equalsBtn = document.querySelector(".equals");
 
 const add = (a, b) => {
     return a + b;
@@ -68,3 +69,4 @@ multiplyBtn.addEventListener('click', () => {
 divideBtn.addEventListener('click', () => {
     operator = "divide";
 })
+
