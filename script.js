@@ -1,12 +1,16 @@
 //variables for calculator input
 let firstNum = 2;
-const operator = "add";
+let operator = "add";
 const secondNum = 4;
 
 
 const displayValue = document.querySelector(".display");
 const btns = document.querySelectorAll(".btn");
 const btnNums = document.querySelectorAll(".btn-num");
+const addBtn = document.querySelector(".add");
+const subtractBtn = document.querySelector(".subtract");
+const multiplyBtn = document.querySelector(".multiply");
+const divideBtn = document.querySelector(".divide");
 
 const add = (a, b) => {
     return a + b;
@@ -49,5 +53,18 @@ btnNums.forEach((btn) => {
         })    
     });
 
+addBtn.addEventListener('click', () => {
+    operator = "add";
+});
 
+subtractBtn.addEventListener('click', () => {
+    operator = "subtract";
+});
 
+multiplyBtn.addEventListener('click', () => {
+    operator = "multiply";
+});
+
+divideBtn.addEventListener('click', () => {
+    operator = "divide";
+})
