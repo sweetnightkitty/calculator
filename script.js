@@ -6,6 +6,7 @@ const secondNum = 4;
 
 const displayValue = document.querySelector(".display");
 const btns = document.querySelectorAll(".btn");
+const btnNums = document.querySelectorAll(".btn-num");
 
 const add = (a, b) => {
     return a + b;
@@ -41,10 +42,12 @@ console.log(operate(firstNum, operator, secondNum));
 
 // Button listener to activate the clicked button
 
-btns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        displayValue.textContent() = btn.textContent;
-    })
-})
+btnNums.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            displayValue.textContent = btn.textContent;
+            console.log(btn.textContent);
+        })    
+    });
+
 
 
