@@ -1,5 +1,5 @@
 //variables for calculator input
-const firstNum = 2;
+let firstNum = 2;
 const operator = "add";
 const secondNum = 4;
 
@@ -40,12 +40,12 @@ const operate = (firstNum, operator, secondNum) => {
 
 console.log(operate(firstNum, operator, secondNum));
 
-// Button listener to activate the clicked button
 
+//Changes display to display button pressed and updates to firstNum
 btnNums.forEach((btn) => {
         btn.addEventListener('click', () => {
             displayValue.textContent = btn.textContent;
-            console.log(btn.textContent);
+            firstNum = displayValue.textContent;
         })    
     });
 
