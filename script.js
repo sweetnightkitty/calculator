@@ -50,11 +50,11 @@ console.log(operate(firstNum, operator, secondNum));
 //Changes display to display button pressed and updates to firstNum
 btnNums.forEach((btn) => {
         btn.addEventListener('click', () => {
-            if (displayValue.textContent == 0) {
-                displayValue.textContent = btn.textContent;    
-            } else {
+            if (displayValue.textContent == 0){
+                displayValue.textContent = "" + btn.textContent;
+            } else if (displayValue.textContent.length < 10){
                 displayValue.textContent = "" + displayValue.textContent + btn.textContent;
-            }
+            };
             
             firstNum = displayValue.textContent;
         })    
