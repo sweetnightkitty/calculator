@@ -1,8 +1,9 @@
 //variables for calculator input
-let firstNum = 2;
+let firstNum;
 let operator = "add";
-let secondNum = 4;
+let secondNum;
 let number = "first";
+let solution;
 
 
 const displayValue = document.querySelector(".display");
@@ -32,6 +33,8 @@ const divide = (a, b) => {
 };
 
 const operate = (firstNum, operator, secondNum) => {
+    firstNum = Number(firstNum);
+    secondNum = Number(secondNum);
     if(operator === "add") {
         return add(firstNum, secondNum);
     } else if(operator === "subtract") {
@@ -43,10 +46,9 @@ const operate = (firstNum, operator, secondNum) => {
     } else {
         return
     }
+
 }
 
-console.log(operate(firstNum, operator, secondNum));
-console.log(displayValue.length);
 
 //Changes display to display button pressed and updates to firstNum
 btnNums.forEach((btn) => {
@@ -91,6 +93,11 @@ divideBtn.addEventListener('click', () => {
     number = "second"
 })
 
+equalsBtn.addEventListener('click', () => {
+    const solution = operate(firstNum, operator, secondNum);
+    displayValue.textContent = "" + solution;
+    number = "first";
+});
 
 
 function switchNumbers(number, output) {
