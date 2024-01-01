@@ -1,7 +1,7 @@
 //variables for calculator input
 let firstNum = 2;
 let operator = "add";
-const secondNum = 4;
+let secondNum = 4;
 let number = "first";
 
 
@@ -57,7 +57,8 @@ btnNums.forEach((btn) => {
                 displayValue.textContent = "" + displayValue.textContent + btn.textContent;
             }
             
-            firstNum = displayValue.textContent;
+            output = displayValue.textContent;
+            switchNumbers(number, output);
         })    
     });
 
@@ -77,7 +78,7 @@ subtractBtn.addEventListener('click', () => {
     number = "second"
 });
 
-//after click display on calculator resets, number switches to second - works fine!
+
 multiplyBtn.addEventListener('click', () => {
     operator = "multiply";
     displayValue.textContent = 0;
@@ -90,9 +91,12 @@ divideBtn.addEventListener('click', () => {
     number = "second"
 })
 
-//
-// function switchNumbers(number) {
-//     if (number == "first") {
-//     } else if (number == "second") {
-//     }
-// }
+
+
+function switchNumbers(number, output) {
+    if (number == "first") {
+        firstNum = output;
+    } else if (number == "second") {
+        secondNum = output;
+    }
+}
