@@ -2,6 +2,7 @@
 let firstNum = 2;
 let operator = "add";
 const secondNum = 4;
+let number = "first";
 
 
 const displayValue = document.querySelector(".display");
@@ -57,8 +58,6 @@ btnNums.forEach((btn) => {
             }
             
             firstNum = displayValue.textContent;
-            console.log(firstNum);
-            console.log(displayValue.textContent.length);
         })    
     });
 
@@ -74,11 +73,22 @@ subtractBtn.addEventListener('click', () => {
     operator = "subtract";
 });
 
+//after click display on calculator resets, number switches to second - works fine!
 multiplyBtn.addEventListener('click', () => {
     operator = "multiply";
+    displayValue.textContent = 0;
+    number = "second"
 });
 
 divideBtn.addEventListener('click', () => {
     operator = "divide";
 })
 
+//added function to toggle numbers between first and second
+function switchNumbers(number) {
+    if (number == "first") {
+        firstNum = displayValue.textContent;
+    } else if (number == "second") {
+        secondNum == displayValue.textContent;
+    }
+}
