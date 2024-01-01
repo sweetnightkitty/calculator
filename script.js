@@ -67,10 +67,14 @@ clear.addEventListener('click', () => {
 
 addBtn.addEventListener('click', () => {
     operator = "add";
+    displayValue.textContent = 0;
+    number = "second"
 });
 
 subtractBtn.addEventListener('click', () => {
     operator = "subtract";
+    displayValue.textContent = 0;
+    number = "second"
 });
 
 //after click display on calculator resets, number switches to second - works fine!
@@ -82,11 +86,13 @@ multiplyBtn.addEventListener('click', () => {
 
 divideBtn.addEventListener('click', () => {
     operator = "divide";
+    displayValue.textContent = 0;
+    number = "second"
 })
 
-//added function to toggle numbers between first and second
-function switchNumbers(number) {
-    if (number == "first") {
-    } else if (number == "second") {
-    }
-}
+//
+// function switchNumbers(number) {
+//     if (number == "first") {
+//     } else if (number == "second") {
+//     }
+// }
