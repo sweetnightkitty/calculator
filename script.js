@@ -87,8 +87,6 @@ divideBtn.addEventListener('click', () => {
 //added function to toggle numbers between first and second
 function switchNumbers(number) {
     if (number == "first") {
-        firstNum = displayValue.textContent;
     } else if (number == "second") {
-        secondNum == displayValue.textContent;
     }
 }
