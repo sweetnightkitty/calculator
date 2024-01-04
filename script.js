@@ -3,7 +3,6 @@ let firstNum;
 let operator;
 let secondNum;
 let equationPosition = "first";
-let solution;
 
 
 const display = document.querySelector(".display");
@@ -138,7 +137,8 @@ equalsBtn.addEventListener('click', () => {
     assignNumbers(equationPosition, value); //assigns second number in equation
     const solution = operate(firstNum, operator, secondNum); 
     display.textContent = "" + solution;
-    firstNum = solution;
+    equationPosition = "first";
+    value = solution;
     secondNum = undefined;
 });
 
