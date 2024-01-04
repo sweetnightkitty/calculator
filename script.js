@@ -143,7 +143,6 @@ equalsBtn.addEventListener('click', () => {
     if (solution == Infinity) {
         display.textContent = "Ho Ho No!";
     } else if (solution) {
-        solution = parseFloat(solution).toFixed(8);
         display.textContent = "" + solution;
 
         //allows further computations using the solution as the first num
