@@ -56,9 +56,7 @@ btnNums.forEach((btn) => {
                 display.textContent = "" + display.textContent + btn.textContent;
             }
 
-            value = display.textContent; // 9 - 5 (4) + 2 = 6
-            //9 (first) -> 9 - undefined (second)
-            // 5 (second)
+            value = display.textContent;
         })    
     });
 
@@ -94,21 +92,45 @@ addBtn.addEventListener('click', () => {
 });
 
 subtractBtn.addEventListener('click', () => {
+    assignNumbers(equationPosition, value);
+
+    if (equationPosition == "second") {
+        const solution = operate(firstNum, operator, secondNum);
+        display.textContent = "" + solution;
+        firstNum = solution;
+        secondNum = undefined;
+    };
+
     operator = "subtract";
-    assignNumbers(equationPosition, value); // 9 - undefined
     equationPosition = "second"
 });
 
 
 multiplyBtn.addEventListener('click', () => {
-    operator = "multiply";
     assignNumbers(equationPosition, value);
+
+    if (equationPosition == "second") {
+        const solution = operate(firstNum, operator, secondNum);
+        display.textContent = "" + solution;
+        firstNum = solution;
+        secondNum = undefined;
+    };
+
+    operator = "multiply";
     equationPosition = "second"
 });
 
 divideBtn.addEventListener('click', () => {
-    operator = "divide";
     assignNumbers(equationPosition, value);
+
+    if (equationPosition == "second") {
+        const solution = operate(firstNum, operator, secondNum);
+        display.textContent = "" + solution;
+        firstNum = solution;
+        secondNum = undefined;
+    };
+
+    operator = "divide";
     equationPosition = "second"
 })
 
