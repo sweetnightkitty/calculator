@@ -1,6 +1,6 @@
 //variables for calculator input
 let firstNum;
-let operator = "add";
+let operator;
 let secondNum;
 let equationPosition = "first";
 let solution;
