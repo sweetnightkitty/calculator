@@ -56,16 +56,12 @@ btnNums.forEach((btn) => {
                 display.textContent = "" + display.textContent + btn.textContent;
             }
 
-            value = display.textContent; //value is 5 --> //new value is 10
+            value = display.textContent;
             //assignNumbers(equationPosition, value);
         })    
     });
 
 
-
-    //log number in for each.
-    // logged number is put into a function to append value
-    //funnel logged number into display function   
 
 function assignNumbers(equationPosition, value) {
     if (equationPosition == "first") {
@@ -84,33 +80,33 @@ clear.addEventListener('click', () => {
 //edited
 addBtn.addEventListener('click', () => {
     operator = "add";
-    assignNumbers(equationPosition, value); //first position becomes 5
-    equationPosition = "second" // no reset of display value; we can't, want it to reset after button press
+    assignNumbers(equationPosition, value);
+    equationPosition = "second" 
 
 });
 
 subtractBtn.addEventListener('click', () => {
     operator = "subtract";
-    display.textContent = 0;
+    assignNumbers(equationPosition, value);
     equationPosition = "second"
 });
 
 
 multiplyBtn.addEventListener('click', () => {
     operator = "multiply";
-    display.textContent = 0;
+    assignNumbers(equationPosition, value);
     equationPosition = "second"
 });
 
 divideBtn.addEventListener('click', () => {
     operator = "divide";
-    display.textContent = 0;
+    assignNumbers(equationPosition, value);
     equationPosition = "second"
 })
 
 equalsBtn.addEventListener('click', () => {
-    assignNumbers(equationPosition, value); //new value 10 assigned to numb2 (5 + 10)
-    const solution = operate(firstNum, operator, secondNum); //soln = 15
+    assignNumbers(equationPosition, value);
+    const solution = operate(firstNum, operator, secondNum); 
     display.textContent = "" + solution; 
     equationPosition = "first";
 });
