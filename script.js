@@ -2,11 +2,11 @@
 let firstNum;
 let operator = "add";
 let secondNum;
-let number = "first";
+let equationPosition = "first";
 let solution;
 
 
-const displayValue = document.querySelector(".display");
+const display = document.querySelector(".display");
 const btns = document.querySelectorAll(".btn");
 const btnNums = document.querySelectorAll(".btn-num");
 const addBtn = document.querySelector(".add");
@@ -16,25 +16,18 @@ const divideBtn = document.querySelector(".divide");
 const equalsBtn = document.querySelector(".equals");
 const clear = document.querySelector(".clear");
 
-const add = (a, b) => {
-    return a + b;
-};
 
-const subtract = (a, b) => {
-    return a - b;
-};
 
-const multiply = (a, b) => {
-    return a * b;
-};
+const add = (a, b) => {return a + b;};
+const subtract = (a, b) => {return a - b;};
+const multiply = (a, b) => {return a * b;};
+const divide = (a, b) => {return a / b;};
 
-const divide = (a, b) => {
-    return a / b;
-};
 
 const operate = (firstNum, operator, secondNum) => {
     firstNum = Number(firstNum);
     secondNum = Number(secondNum);
+
     if(operator === "add") {
         return add(firstNum, secondNum);
     } else if(operator === "subtract") {
@@ -47,63 +40,80 @@ const operate = (firstNum, operator, secondNum) => {
         return
     }
 
-}
+};
+
 
 
 //Changes display to display button pressed and updates to firstNum
 btnNums.forEach((btn) => {
         btn.addEventListener('click', () => {
-            if (displayValue.textContent.length < 10 && displayValue.textContent == 0){
-                displayValue.textContent = "" + btn.textContent;
-            } else if (displayValue.textContent.length < 10){
-                displayValue.textContent = "" + displayValue.textContent + btn.textContent;
+            if (equationPosition == "second" && secondNum == undefined) {
+                display.textContent = "" + btn.textContent;
+                secondNum = display.textContent;
+            } else if (display.textContent.length < 10 && display.textContent == 0){
+                display.textContent = "" + btn.textContent;
+            } else if (display.textContent.length < 10){
+                display.textContent = "" + display.textContent + btn.textContent;
             }
-            
-            output = displayValue.textContent;
-            switchNumbers(number, output);
+
+            value = display.textContent; //value is 5 --> //new value is 10
+            //assignNumbers(equationPosition, value);
         })    
     });
 
+
+
+    //log number in for each.
+    // logged number is put into a function to append value
+    //funnel logged number into display function   
+
+function assignNumbers(equationPosition, value) {
+    if (equationPosition == "first") {
+        firstNum = value;
+    } else if (equationPosition == "second") {
+        secondNum = value;
+    }
+}
+
 clear.addEventListener('click', () => {
-    displayValue.textContent = 0;
+    display.textContent = 0;
+    firstNum = undefined;
+    secondNum = undefined;
 })
 
+//edited
 addBtn.addEventListener('click', () => {
     operator = "add";
-    displayValue.textContent = 0;
-    number = "second"
+    assignNumbers(equationPosition, value); //first position becomes 5
+    equationPosition = "second" // no reset of display value; we can't, want it to reset after button press
+
 });
 
 subtractBtn.addEventListener('click', () => {
     operator = "subtract";
-    displayValue.textContent = 0;
-    number = "second"
+    display.textContent = 0;
+    equationPosition = "second"
 });
 
 
 multiplyBtn.addEventListener('click', () => {
     operator = "multiply";
-    displayValue.textContent = 0;
-    number = "second"
+    display.textContent = 0;
+    equationPosition = "second"
 });
 
 divideBtn.addEventListener('click', () => {
     operator = "divide";
-    displayValue.textContent = 0;
-    number = "second"
+    display.textContent = 0;
+    equationPosition = "second"
 })
 
 equalsBtn.addEventListener('click', () => {
-    const solution = operate(firstNum, operator, secondNum);
-    displayValue.textContent = "" + solution;
-    number = "first";
+    assignNumbers(equationPosition, value); //new value 10 assigned to numb2 (5 + 10)
+    const solution = operate(firstNum, operator, secondNum); //soln = 15
+    display.textContent = "" + solution; 
+    equationPosition = "first";
 });
 
 
-function switchNumbers(number, output) {
-    if (number == "first") {
-        firstNum = output;
-    } else if (number == "second") {
-        secondNum = output;
-    }
-}
+
