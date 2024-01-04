@@ -134,13 +134,21 @@ divideBtn.addEventListener('click', () => {
 })
 
 equalsBtn.addEventListener('click', () => {
-    assignNumbers(equationPosition, value); //assigns second number in equation
-    const solution = operate(firstNum, operator, secondNum); 
-    display.textContent = "" + solution;
-    equationPosition = "first";
-    value = solution;
-    secondNum = undefined;
+
+    if(equationPosition == "second"){
+       assignNumbers(equationPosition, value); //assigns second number in equation 
+    };
+       
+    let solution = operate(firstNum, operator, secondNum); 
+    if (solution == Infinity) {
+        display.textContent = "Ho Ho No!";
+    } else if (solution) {
+        solution = parseFloat(solution).toFixed(8);
+        display.textContent = "" + solution;
+
+        //allows further computations using the solution as the first num
+        equationPosition = "first";
+        value = solution;
+        secondNum = undefined;
+    };
 });
-
-
-
