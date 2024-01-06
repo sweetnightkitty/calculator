@@ -16,7 +16,6 @@ const equalsBtn = document.querySelector(".equals");
 const clear = document.querySelector(".clear");
 
 
-
 const add = (a, b) => {return a + b;};
 const subtract = (a, b) => {return a - b;};
 const multiply = (a, b) => {return a * b;};
@@ -82,7 +81,8 @@ addBtn.addEventListener('click', () => {
 
     if (equationPosition == "second") {
         const solution = operate(firstNum, operator, secondNum);
-        display.textContent = "" + solution;
+        const trimmedSolution = (solution + "").substring(0, 10);
+        display.textContent = "" + trimmedSolution;
         firstNum = solution;
         secondNum = undefined;
     };
@@ -95,7 +95,8 @@ subtractBtn.addEventListener('click', () => {
 
     if (equationPosition == "second") {
         const solution = operate(firstNum, operator, secondNum);
-        display.textContent = "" + solution;
+        const trimmedSolution = (solution + "").substring(0, 10);
+        display.textContent = "" + trimmedSolution;
         firstNum = solution;
         secondNum = undefined;
     };
@@ -110,7 +111,8 @@ multiplyBtn.addEventListener('click', () => {
 
     if (equationPosition == "second") {
         const solution = operate(firstNum, operator, secondNum);
-        display.textContent = "" + solution;
+        const trimmedSolution = (solution + "").substring(0, 10);
+        display.textContent = "" + trimmedSolution;
         firstNum = solution;
         secondNum = undefined;
     };
@@ -124,7 +126,8 @@ divideBtn.addEventListener('click', () => {
 
     if (equationPosition == "second") {
         const solution = operate(firstNum, operator, secondNum);
-        display.textContent = "" + solution;
+        const trimmedSolution = (solution + "").substring(0, 10);
+        display.textContent = "" + trimmedSolution;
         firstNum = solution;
         secondNum = undefined;
     };
@@ -143,7 +146,8 @@ equalsBtn.addEventListener('click', () => {
     if (solution == Infinity) {
         display.textContent = "Ho Ho No!";
     } else if (solution) {
-        display.textContent = "" + solution;
+        const trimmedSolution = (solution + "").substring(0, 10);
+        display.textContent = "" + trimmedSolution;
 
         //allows further computations using the solution as the first num
         equationPosition = "first";
