@@ -42,6 +42,8 @@ const operate = (firstNum, operator, secondNum) => {
 
 
 
+
+
 //Changes display to display button pressed and updates to firstNum
 btnNums.forEach((btn) => {
         btn.addEventListener('click', () => {
@@ -57,7 +59,6 @@ btnNums.forEach((btn) => {
             value = display.textContent;
         })    
     });
-
 
 
 function assignNumbers(equationPosition, value) {
